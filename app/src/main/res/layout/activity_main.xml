@@ -5,7 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-<!--This LinearLayout contains the team names -->
+    <!--This LinearLayout contains the team names -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Score card"
+            android:textSize="34sp" />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,6 +29,7 @@
             android:id="@+id/team1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="India"
@@ -25,18 +40,19 @@
             android:id="@+id/team2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="Australia"
             android:textColor="#FFC107"
             android:textSize="40dp" />
     </LinearLayout>
-        <!--This LinearLayout contains the scores for each team-->
+    <!--This LinearLayout contains the scores for each team-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal">
         <!--two TextViews to display the scores-->
         <TextView
             android:id="@+id/team1_score"
@@ -56,7 +72,7 @@
             android:text="0"
             android:textSize="34sp" />
     </LinearLayout>
-        <!--This LinearLayout contains the "Count Runs" TextView-->
+    <!--This LinearLayout contains the "Count Runs" TextView-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -64,7 +80,7 @@
 
         <TextView
             android:id="@+id/RunsCounter"
-            android:layout_width="289dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="150dp"
             android:gravity="center"
