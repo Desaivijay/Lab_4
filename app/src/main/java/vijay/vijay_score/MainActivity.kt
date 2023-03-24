@@ -1,11 +1,15 @@
 package vijay.vijay_score
 
+import android.app.UiModeManager.MODE_NIGHT_NO
+import android.app.UiModeManager.MODE_NIGHT_YES
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.Switch
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatDelegate
 
 class MainActivity : AppCompatActivity() {
     // Views
@@ -22,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var five_runs: RadioButton
     private lateinit var six_runs: RadioButton
     private lateinit var radioGroup: RadioGroup
+
     // Integer value for increment decrement score
     private var valueToIncDec: Int = 0
 
@@ -43,6 +48,8 @@ class MainActivity : AppCompatActivity() {
         five_runs = findViewById(R.id.five_runs)
         six_runs = findViewById(R.id.six_runs)
         radioGroup = findViewById(R.id.radioGroup)
+
+        val switch: Switch = findViewById(R.id.theme)
         // Set valueToIncDec when radio button checked
         radioGroup.setOnCheckedChangeListener { group, checkedId ->
             valueToIncDec = when (checkedId) {
@@ -97,5 +104,14 @@ class MainActivity : AppCompatActivity() {
                 team2_score.text = newscore.toString()
             }
         }
+
+        switch.setOnCheckedChangeListener{ buttonView, isChecked ->
+            if(isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+             }else {
+                 AppCompatDelegate.setDefaultNightMode((AppCompatDelegate.MODE_NIGHT_NO))
+             }
+
+            }
+        }
     }
-}
