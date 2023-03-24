@@ -212,7 +212,7 @@
     </LinearLayout>
     <!-- This Switch gives user option to change the theme to dark mode -->
     <Switch
-        android:id="@+id/theme"
+        android:id="@+id/darkmode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Dark mode"
