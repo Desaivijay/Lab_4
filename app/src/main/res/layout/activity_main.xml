@@ -93,7 +93,8 @@
             android:layout_marginTop="150dp"
             android:gravity="center"
             android:text="Count Runs"
-            android:textSize="34sp" />
+            android:textSize="34sp"
+            style="@style/styletext"/>
     </LinearLayout>
     <!-- This LinearLayout contains the radio buttons for selecting the number of runs. It has
           a RadioGroup with 6 RadioButtons. -->
@@ -212,7 +213,7 @@
     </LinearLayout>
     <!-- This Switch gives user option to change the theme to dark mode -->
     <Switch
-        android:id="@+id/theme"
+        android:id="@+id/darkmode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Dark mode"
