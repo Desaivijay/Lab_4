@@ -212,15 +212,6 @@
             />
     </LinearLayout>
     <!-- This Switch gives user option to change the theme to dark mode -->
-    <Switch
-        android:id="@+id/darkmode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Dark mode"
-        tools:ignore="MissingConstraints"
-        android:gravity="right"
-        android:textSize="20sp"
-        android:paddingTop="400dp"
-        app:layout_constraintHorizontal_weight="@integer/material_motion_duration_long_1"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

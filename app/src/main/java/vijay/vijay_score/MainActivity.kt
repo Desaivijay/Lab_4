@@ -2,13 +2,18 @@ package vijay.vijay_score
 
 import android.app.UiModeManager.MODE_NIGHT_NO
 import android.app.UiModeManager.MODE_NIGHT_YES
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Switch
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 
 class MainActivity : AppCompatActivity() {
@@ -47,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         five_runs = findViewById(R.id.five_runs)
         six_runs = findViewById(R.id.six_runs)
         radioGroup = findViewById(R.id.radioGroup)
-        val switch: Switch = findViewById(R.id.darkmode)
+        //val switch: Switch = findViewById(R.id.darkmode)
         // Set valueToIncDec when radio button checked
         radioGroup.setOnCheckedChangeListener { group, checkedId ->
             valueToIncDec = when (checkedId) {
@@ -104,12 +109,35 @@ class MainActivity : AppCompatActivity() {
         }
 
         // if checked the switch will change the theme to dark mode
-        switch.setOnCheckedChangeListener { buttonView, isChecked ->
-            if(isChecked){
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            }else{
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+      //  switch.setOnCheckedChangeListener { buttonView, isChecked ->
+      //      if(isChecked){
+        //        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+       //     }else{
+        //        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+       //     }
+      //  }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        return when (item.itemId){
+            R.id.about -> {
+                Toast.makeText(this,"Developer Information: \\nName: Vijaybhai Desai, Jenil Parmar, Harsh Patel \\nCourse Code: JAV1001 - 11354\"",Toast.LENGTH_LONG).show()
+                true
             }
+            R.id.settings ->{
+                val intent = Intent(this,settingsActivity ::class.java)
+                startActivity(intent)
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
+
 }

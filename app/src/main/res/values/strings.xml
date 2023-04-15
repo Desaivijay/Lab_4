@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Vijay_score</string>
+    <string name="team_a_score">Team A Score</string>
+    <string name="team_b_score">Team B Score</string>
+    <string name="sp_name">my_shared_preferences</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>
